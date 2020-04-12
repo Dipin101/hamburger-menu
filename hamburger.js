@@ -1,5 +1,6 @@
 const button = document.querySelector('.hamburger')
 const btn = document.querySelector('.hamburger1')
+const btn1 = document.querySelector('.hamburger2')
 let menuOpen = false
 
 //without using callback
@@ -34,6 +35,19 @@ function burgermenu() {
         menuOpen = true
     } else {
         btn.classList.remove('open')
+        menuOpen = false
+    }
+}
+
+
+btn1.addEventListener('click', style)
+
+function style() {
+    if(!menuOpen) {
+        btn1.classList.add('open')
+        menuOpen = true
+    } else {
+        btn1.classList.remove('open')
         menuOpen = false
     }
 }

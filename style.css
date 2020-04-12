@@ -5,7 +5,6 @@
 }
 body{
     background-color: black;
-    display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
@@ -17,7 +16,10 @@ body{
     font-size: 2rem;
     justify-content: center;
     align-items: center;
-
+}
+.container {
+    display: flex;
+    margin: 25% 10% 0% 10%;
 }
 .hamburger{
     border: 1px solid white;
@@ -142,5 +144,104 @@ background: transparent;
     width: 35px;
 } 
 
+/* 3rd icon css */
+
+.hamburger2{
+    border: 1px solid white;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    right:0px;
+    height: 80px;
+    cursor: pointer;    
+    transition: all .9s ease-in-out;
+}
+.menu2{
+    width: 50px;
+    height: 6px;    
+    background-color: white;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+.menu2::before{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    cursor: pointer;
+    transform: translateY(16px);
+    background-color: white;
+    transition: all .2s ease-in-out;
+}
+.menu2::after {
+    content: '';
+    position: absolute;
+    transform: translateY(-16px);
+    width: 50px;
+    cursor: pointer;
+    height: 6px;
+    background-color: white;
+    transition: all .2s ease-in-out;
+}
+
+/* Animation */
+
+.hamburger2.open .menu2{    
+    background: transparent;
+}
+.hamburger2.open .menu2::before {   
+    animation: mymove2 .5s ease-in-out;    
+    animation-fill-mode: forwards;
+    width: 50px;
+}
+.hamburger2.open .menu2::after {    
+    animation: mymove1 .5s ease-in-out;
+    animation-fill-mode: forwards;
+    width: 50px;
+} 
+
+
+.hamburger2 .menu2::before {   
+    animation: mymove3 .5s ease-in-out;  
+    width: 50px;
+}
+.hamburger2 .menu2::after {    
+    animation: mymove4 .5s ease-in-out;
+    width: 50px;
+}
+@keyframes mymove1 {
+    50% {
+        transform: translate(0px, 0px) ;
+    }
+    100% {
+        transform:rotate(-45deg) ;
+    }
+  }
+@keyframes mymove2 {
+    50% {
+        transform: translate(0px, 0px) ;
+    }
+    100% {
+        transform:rotate(45deg)  ;
+    }
+}
+@keyframes mymove3 {
+    50% {
+        transform:rotate(-45deg) ;     
+    }
+    100% {
+        transform: translate(0px, 0px) ;
+    }
+  }
+@keyframes mymove4 {
+    50% {
+        transform:rotate(45deg)  ;        
+    }
+    100% {
+        transform: translate(0px, 0px) ;
+    }
+}
 
 
