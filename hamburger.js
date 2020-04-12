@@ -39,7 +39,6 @@ function burgermenu() {
     }
 }
 
-
 btn1.addEventListener('click', style)
 
 function style() {
